@@ -1,14 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 
-void ft_memset(char *a, int b, unsigned int c)
+void ft_memset(void *a, int b, unsigned int c)
 {
   int i;
+  unsigned char *dest = (unsigned char *)a;
 
   i = 0;
   while(i != c)
   {
-    a[i] = b;
+    dest[i] = b;
     i++;
   }
 }
@@ -21,12 +22,11 @@ int main()
   int b = '*';
   int c = 2;
   
-  memset(a, '*', 2 * sizeof(char));
+  memset(a, 'b', 3 * sizeof(char));
   printf("function string : %s\n", a);
 
-  ft_memset(t, '*', 2 * sizeof(char));
+  ft_memset(t, 'b', 3 * sizeof(char));
   printf("function ayoub : %s\n", t);
 
   // printf("%d\n", ft_isascii(199));
-
 }
