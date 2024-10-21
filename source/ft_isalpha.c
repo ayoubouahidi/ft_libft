@@ -1,28 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/21 16:31:39 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/21 16:33:21 by ayouahid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <ctype.h>
 #include <stdio.h>
 
-int ft_isalpha(int a)
+int	ft_isalpha(int a)
 {
-  if ((a >= 65 && a <= 90) ||(a >= 97 && a <= 122))
-  {
-    return 1;
-  }
-  return 0;
-  
+	if ((a >= 65 && a <= 90) || (a >= 97 && a <= 122))
+	{
+		return (1);
+	}
+	return (0);
 }
-/*test a supprimer*/
-
-// int main()
-// {
-//   char a = 'z';
-//   printf("%d\n", isalpha(a));
-//   printf("%d\n", ft_isalpha(a));
-//   if (ft_isalpha(a))
-//   {
-//     printf("true\n");
-//   }
-//   else
-//   {
-//     printf("false\n");
-//   }
-// }
