@@ -18,10 +18,10 @@ const char *ft_strrchr(const char *str, int c)
   return NULL;
 }
 
-// int main()
-// {
-//   char str[20] = "testayoubatest";
+ int main()
+ {
+   char str[20] = "esayoubaes";
 
-//   printf("string's function : %s\n", strrchr(str, 't'));
-//   printf("ayoub's function : %s\n", strrchr(str, 't'));
-// }
+   printf("string's function : %s\n", strrchr(str, 't'));
+   printf("ayoub's function : %s\n", strrchr(str, 't'));
+ }
