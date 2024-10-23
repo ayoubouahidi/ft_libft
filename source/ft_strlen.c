@@ -1,27 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 15:26:30 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/23 15:57:55 by ayouahid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 
-unsigned int ft_strlen(const char *a)
+unsigned int	ft_strlen(const char *a)
 {
-  int i;
+	int	i;
 
-  i = 0;
-  while (a[i] != '\0')
-  {
-    i++;
-  }
-  return i;
+	i = 0;
+	while (a[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
 }
-
-// int main()
-// {
-//   char a[20] = "ouahidi";
-//   char s[20] = "ouahidi";
-//   int b = '1';
-//   int c = 2;
-//   printf("%d\n", ft_strlen(a+1));
-//   // memset(a + 1, b,2 * sizeof(char));
-//   printf("%s", a);
-
-
-// }

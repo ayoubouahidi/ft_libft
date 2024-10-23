@@ -1,13 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 15:20:20 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/23 15:24:18 by ayouahid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <ctype.h>
 #include <stdio.h>
-int ft_isascii(int a)
+
+int	ft_isascii(int a)
 {
 	if (a >= 1 && a <= 127)
-		return 1;
-	return 0;
+		return (1);
+	return (0);
 }
-// int main()
-// {
-//   printf("%d\n", ft_isascii(199));
-//   printf("%d\n", isascii(199));
-// }

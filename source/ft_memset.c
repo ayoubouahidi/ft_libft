@@ -1,31 +1,44 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/23 15:59:03 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/23 16:20:26 by ayouahid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
 #include <string.h>
 
-void ft_memset(void *a, int b, unsigned int c)
+void	*ft_memset(void *a, int b, size_t c)
 {
-  int i;
+  size_t i;
   unsigned char *dest = (unsigned char *)a;
 
   i = 0;
-  while(i != c)
+  while(i !=  c)
   {
-    dest[i] = b;
+    dest[i] = (unsigned char)b;
     i++;
   }
+  return (a);
 }
 
 
 int main()
 {
-  char a[20] = "";
-  char t[20] = "";
+  char a[] = "hello ayoub";
+  char t[] = "hello ayoub";
   // int b = '*';
   // int c = 2;
   
-  memset(a, 'a', 2 * sizeof(char));
+  memset(a, '*', 14);
   printf("function string : %s\n", a);
 
-  ft_memset(t, 'a', 2 * sizeof(char));
+  ft_memset(t, '*', 14);
   printf("function ayoub : %s\n", t);
 
   // printf("%d\n", ft_isascii(199));
