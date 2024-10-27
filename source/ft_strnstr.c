@@ -1,42 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 16:06:12 by ayouahid          #+#    #+#             */
-/*   Updated: 2024/10/26 16:12:50 by ayouahid         ###   ########.fr       */
+/*   Created: 2024/10/27 16:41:00 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/27 16:41:25 by ayouahid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
-#include "libft.h"
 
-char	*ft_strrchr(const char *str, int c)
+int main()
 {
-	int		i;
-	int		lenstr;
-	char	*s;
+	char *str = "prenom : ayoub,nom : ouahidi";
+	char *tofind = "ayoub";
 
-	s = (char *)str;
-	lenstr = ft_strlen(str);
-	i = lenstr;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			return (&s[i]);
-		i--;
-	}
-	return (NULL);
+	char *result= strnstr(str, tofind, 5);
+	printf("string's function : %s\n", result);
+
+
 }
-/*
- int main()
- {
-   char str[20] = "esayoubaes";
-
-   printf("string's function : %s\n", strrchr(str, 't'));
-   printf("ayoub's function : %s\n", strrchr(str, 't'));
- }
- */

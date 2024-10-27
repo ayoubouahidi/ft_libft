@@ -1,39 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/10/26 11:59:18 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/26 15:00:35 by ayouahid         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdio.h>
-#include <string.h>
 #include "libft.h"
 
-int ft_memmove(void *dest, const void *src, size_t numByte)
+void	*ft_memmove(void *dest, const void *src, size_t numByte)
 {
-  int i;
-  int j;
-  char *newdest = (unsigned char *)dest;
-  const char *newSrc =(const unsigned char *)src;
-  char *tmp;
+	size_t	i;
+	size_t	j;
+	char	*newdest;
+	char	*newsrc ;
 
-  // if(numByte > ft_strlen(newSrc))
-  //   return 0;
-  if((newdest > newSrc && newdest < newSrc + numByte))
-  {
-    i = numByte;
-  }else{
-    i = 0;
-    while (i < numByte)
-    {
-      newdest[i] = newSrc[i];
-      i++;
-    }
-  }
+	newdest = (unsigned char *)dest;
+	newsrc = (unsigned char *)src;
+	if (newdest > newsrc)
+	{
+		i = numByte;
+		while (i-- > 0)
+		{
+			newdest[i] = newsrc[i];
+		}
+	}
+	else
+	{
+		ft_memcpy(newdest, newsrc, numByte);
+	}
+	return (dest);
 }
-
-
+/*
 int main()
 {
-  char src[]  = "123456";
-  char dest_s[] = "ayo";
-  char dest_a[] = "ayo";
+	char src[]  = "012345";
+	char src1[]  = "012345";
+	// char dest_s[] = "ayoub";
+	// char dest_a[] = "ayoub";
 
-  memmove(dest_s, src, 5);
-  printf("string's function : %s\n", dest_s);
-  ft_memmove(dest_a, src, 5);
-  printf("ayoub's function : %s\n", dest_a);
+//   memmove(src + 2, src, 3);
+  printf("string's function : %s\n", src);
+  ft_memmove(src1 + 2, src1, 3);
+  printf("ayoub's function :  %s\n", src1);
 }
+*/

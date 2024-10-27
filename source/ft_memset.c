@@ -30,16 +30,14 @@ void	*ft_memset(void *a, int b, size_t c)
 
 int main()
 {
-  char a[] = "hello ayoub";
-  char t[] = "hello ayoub";
   // int b = '*';
   // int c = 2;
-  
-  memset(a, '*', 14);
-  printf("function string : %s\n", a);
+  int a = 2;
+  memset((char *)a , 57, 1);
+  printf("function string : %d\n", a);
 
-  ft_memset(t, '*', 14);
-  printf("function ayoub : %s\n", t);
+  // ft_memset(t, '*', 14);
+  // printf("function ayoub : %s\n", t);
 
   // printf("%d\n", ft_isascii(199));
 }

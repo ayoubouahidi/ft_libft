@@ -1,42 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayouahid <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/26 16:06:12 by ayouahid          #+#    #+#             */
-/*   Updated: 2024/10/26 16:12:50 by ayouahid         ###   ########.fr       */
+/*   Created: 2024/10/27 15:07:38 by ayouahid          #+#    #+#             */
+/*   Updated: 2024/10/27 15:07:41 by ayouahid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include <string.h>
-#include "libft.h"
-
-char	*ft_strrchr(const char *str, int c)
+#include <stdio.h>
+void *ft_memchr(const void *s, int c, size_t size)
 {
-	int		i;
-	int		lenstr;
-	char	*s;
+	size_t	i;
+	char	*str;
 
-	s = (char *)str;
-	lenstr = ft_strlen(str);
-	i = lenstr;
-	while (s[i] != '\0')
+	i = 0;
+	str = (char *)s;
+	while(i < size)
 	{
-		if (s[i] == c)
-			return (&s[i]);
-		i--;
+		if(str[i] == c)
+			return (&str[i]);
+		i++;
 	}
 	return (NULL);
 }
 /*
- int main()
- {
-   char str[20] = "esayoubaes";
+int main()
+{
+	char str[20] = "ayoub ouahidiz";\
 
-   printf("string's function : %s\n", strrchr(str, 't'));
-   printf("ayoub's function : %s\n", strrchr(str, 't'));
- }
- */
+	char *chr =  memchr(str,'z', 30);
+	printf("string's function : %s\n", chr);
+
+	char *test =  ft_memchr(str,'z', 30);
+	printf("ayoub's function : %s\n", test);
+}
+*/
