@@ -19,7 +19,7 @@ void	*ft_memset(void *a, int b, size_t c)
   unsigned char *dest = (unsigned char *)a;
 
   i = 0;
-  while(i !=  c)
+  while(i < c)
   {
     dest[i] = (unsigned char)b;
     i++;
@@ -27,7 +27,7 @@ void	*ft_memset(void *a, int b, size_t c)
   return (a);
 }
 
-
+/*
 int main()
 {
   // int b = '*';
@@ -41,3 +41,4 @@ int main()
 
   // printf("%d\n", ft_isascii(199));
 }
+*/
