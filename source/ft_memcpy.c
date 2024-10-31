@@ -20,8 +20,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t numByte)
 	char		*newdest ;
 	const char	*newsrc;
 
-	newdest = (unsigned char *)dest;
-	newsrc = (const unsigned char *)src;
+	newdest = (char *)dest;
+	newsrc = (char *)src;
 	i = 0;
 	while (i < numByte)
 	{

@@ -16,12 +16,11 @@
 void	*ft_memmove(void *dest, const void *src, size_t numByte)
 {
 	size_t	i;
-	size_t	j;
 	char	*newdest;
 	char	*newsrc ;
 
-	newdest = (unsigned char *)dest;
-	newsrc = (unsigned char *)src;
+	newdest = (char *)dest;
+	newsrc = (char *)src;
 	if (newdest > newsrc)
 	{
 		i = numByte;

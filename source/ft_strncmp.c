@@ -21,6 +21,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 
 	str1 = (char *)s1;
 	str2 = (char *)s2;
+	i = 0;
 	if (i == n)
 		return (0);
 	while ((str1[i] != '\0' && str2[i] != '\0' ) && i < n)

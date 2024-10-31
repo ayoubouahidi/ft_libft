@@ -22,7 +22,7 @@ int	fornotminette(int result, int cmpt, int cmpmoins)
 		return (0);
 	if (cmpmoins == 1)
 		return (result * -1);
-	return (result);
+	return result;
 }
 
 int	ft_atoi(char *str)
@@ -51,4 +51,5 @@ int	ft_atoi(char *str)
 		i++;
 	}
 	fornotminette(result, cmpt, cmpmoins);
+	return (result);
 }
