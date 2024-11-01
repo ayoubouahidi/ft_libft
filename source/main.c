@@ -3,13 +3,18 @@
 
 int main()
 {
+   char *str1 = "ayoub ouahidi";
+   char *str2 = " 22ans";
   //*****  this for atoi
   // char *str = "+123ayoub";
   // printf("the atoi function output : %d\n", ft_atoi(str));
   //*****  this test for substr
-  char *str = "ayoub ouahidi";
-  char *newstr = ft_substr(str, 5, 5);
-  printf("the string's is : %s\n", newstr);
+ 
+  // char *newstr = ft_substr(str, 0, 20);
+  // printf("the string's is : %s\n", newstr);
+
+  // ***** this test is for strjoin !
+  printf("ayoub's function : %s\n", ft_strjoin(str1, str2));
 
 }
 

@@ -9,31 +9,32 @@
 /*   Updated: 2024/10/21 16:33:21 by ayouahid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "libft.h"
-#include <stdio.h>
 #include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char *ft_strjoin(char const *s1, char const *s2)
 {
 	char *newstr;
-	unsigned int i;
-	char *str;
+	size_t lens1;
+	size_t lens2;
+	size_t i;
 
-	str = (char *)s;
-	newstr = malloc(len * sizeof(char));
+	i = 0;
+	lens1 = ft_strlen(s1);
+	lens2 = ft_strlen(s2);
+	newstr = (char *)malloc(sizeof(char) * (lens1 + lens2));
 	if (newstr == NULL)
 		return NULL;
-	i = 0;
-	while (str[i] != '\0')
+	while (i < lens1)
 	{
-		if (i == start)
-		{
-			ft_memmove(newstr, (const char *)&str[i], len);
-			break;
-		}
+		newstr[i] = s1[i];
 		i++;
 	}
-	return (newstr);
+	while (i <= lens2)
+	{
+		newstr[i] = s2[i];
+		i++;
+	}
+	newstr[i] = '\0';
+	return newstr;
 }
