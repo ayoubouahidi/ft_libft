@@ -33,6 +33,6 @@ int main()
 {
 	char *str = "!+ ayoub ouahidi +!";
 	char *set = "!+";
-	int num = lenmalloc(str, set);
-	printf("the size is : %d\n", num);
+	char *newstr = ft_strtrim(str, set);
+	printf("the size is : %s\n", newstr);
 }
