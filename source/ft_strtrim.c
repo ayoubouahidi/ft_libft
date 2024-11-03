@@ -65,18 +65,21 @@ char *ft_strtrim(char const *s1, char const *set)
 	char *newstr;
 
 	i = 0;
+	cmpt = 0;
 	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
 	{
 		i++;
 		cmpt++;
 	}
-	j = ft_strlen(s1);
+	j = ft_strlen(s1) - 1;
 	while (s1[j] != '\0' && ft_strchr(set, s1[j]))
 	{
 		j--;
 		cmpt++;
 	}
-	newstr = (char *)malloc(sizeof(char) * cmpt);
-	ft_strlcpy(newstr, s1 + i,cmpt);
+	newstr = (char *)malloc(sizeof(char) * (ft_strlen(s1) - cmpt + 1));
+	if (newstr == NULL)
+		return NULL;
+	ft_strlcpy(newstr, s1 + i, (ft_strlen(s1) - cmpt + 1));
 	return (newstr);
 }

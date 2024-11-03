@@ -50,6 +50,6 @@ int	ft_atoi(char *str)
 		result = result * 10 + (str[i] - 48);
 		i++;
 	}
-	fornotminette(result, cmpt, cmpmoins);
+	result = fornotminette(result, cmpt, cmpmoins);
 	return (result);
 }
