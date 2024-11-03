@@ -37,23 +37,21 @@ char *mallocword(char *s, char c)
 {
 	size_t count;
 	size_t i;
+	size_t j;
 	char *str;
 
-	i = 0;
-	count = 0;
-	while (s[i] != '\0')
-	{
-		while (s[i] != '\0' && s[i] == c)
-			i++;
-		while(s[i] != '\0' && s[i] != c)
-		{
-			i++;
-			count++;
-		}
-	
-	str = (char)malloc(sizeof(char) * count + 1);
+	i = 0;	
+	while (s[i] != '\0' && s[i] != c)
+		i++;
+	str = (char *)malloc(sizeof(char) * i + 1);
 	if(str == NULL)
 		return NULL;
+	j = 0;
+	while (i > j)
+	{
+		str[j] = s[j];
+		j++;
+	}
 	return str;
 }
 
@@ -62,28 +60,37 @@ char 	**ft_split(char const *s, char c)
 	size_t	i;
 	size_t	j;
 
-
 	int	words;
 	char	**str;
 
 	words = countwords(s, c);
 	str = (char **)malloc(sizeof(char *) * words + 1);
 	i = 0;
-	while (i < words)
+	j = 0;
+	while (s[i] != '\0')
 	{
-		j = 0;
-		while (s[j] != '\0')
+		while(s[i] == c)
+			i++;
+		if (s[i] != '\0' && s[i] != c)
 		{
-			str[i] = mallocword(s + j, c);
+			str[j] = mallocword((char *)s + i, c);
 			j++;
 		}
-		i++;
+		while(s[i] != '\0' && s[i] != c)
+			i++;
 	}
-	
+	str[i] = '\0';
+	return str;
 }
 
 int main()
 {
 	char *s = "ayoub+ouahidi+";
-	printf("num of words is : %d\n", countwords(s, '+'));
+	size_t i;
+	char **str = ft_split(s, '+');
+	while (s[i] != '\0')
+	{
+		printf("num of words is : %s\n", str[i]);
+		i++;
+	}
 }
