@@ -35,7 +35,6 @@ int countwords(char const *s, char c)
 }
 char *mallocword(char *s, char c)
 {
-	size_t count;
 	size_t i;
 	size_t j;
 	char *str;
@@ -52,6 +51,7 @@ char *mallocword(char *s, char c)
 		str[j] = s[j];
 		j++;
 	}
+	str[j] = '\0';
 	return str;
 }
 
@@ -59,7 +59,6 @@ char 	**ft_split(char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
-
 	int	words;
 	char	**str;
 
@@ -79,18 +78,21 @@ char 	**ft_split(char const *s, char c)
 		while(s[i] != '\0' && s[i] != c)
 			i++;
 	}
-	str[i] = '\0';
+	str[i] = NULL;
 	return str;
 }
 
-int main()
-{
-	char *s = "ayoub+ouahidi+";
-	size_t i;
-	char **str = ft_split(s, '+');
-	while (s[i] != '\0')
-	{
-		printf("num of words is : %s\n", str[i]);
-		i++;
-	}
-}
+// int main()
+// {
+// 	char *s = "ayoub+ouahidi+";
+// 	size_t i;
+// 	i = 0;
+// 	char **str = ft_split(s, '+');
+// 	while (str[i] != NULL)
+// 	{
+// 		printf("num of words is : %s\n", str[i]);
+// 		// free(str[i]);
+// 		i++;
+// 	}
+// 	// free(str);
+// }

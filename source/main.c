@@ -47,3 +47,17 @@
 // 	tab[2] = "22ans";
 // 	printf("tab est : %s\n", *tab);
 // }
+
+// split function 
+int main()
+{
+  char *str = "ouahidi+ayoub+22ans";
+  size_t i;
+  char **result = ft_split(str, '+');
+  i = 0;
+  while (result[i] != NULL)
+  {
+    printf("%s\n", result[i]);
+    i++;
+  }
+}
