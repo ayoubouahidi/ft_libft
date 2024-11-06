@@ -18,5 +18,7 @@ char *ft_strtrim(char const *s1, char const *set);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 char *ft_strdup(const char *s);
 char 	**ft_split(char const *s, char c);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 #endif

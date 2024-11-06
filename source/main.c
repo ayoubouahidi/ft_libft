@@ -49,15 +49,29 @@
 // }
 
 // split function 
+// int main()
+// {
+//   char *str = "ouahidi+ayoub+22ans";
+//   size_t i;
+//   char **result = ft_split(str, '+');
+//   i = 0;
+//   while (result[i] != NULL)
+//   {
+//     printf("%s\n", result[i]);
+//     i++;
+//   }
+// }
+
+void ft_toupper(unsigned int i, char *c) {
+	if (*c >= 'a' && *c <= 'z')
+	{ 
+		*c = *c - 32; 
+	}
+}
+
 int main()
 {
-  char *str = "ouahidi+ayoub+22ans";
-  size_t i;
-  char **result = ft_split(str, '+');
-  i = 0;
-  while (result[i] != NULL)
-  {
-    printf("%s\n", result[i]);
-    i++;
-  }
+	char s[] = "ayoub 19";
+	ft_striteri(s, ft_toupper);
+	printf("string : %s\n", s);
 }
