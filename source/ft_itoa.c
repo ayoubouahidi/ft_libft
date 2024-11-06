@@ -12,7 +12,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <limits.h>
 int countdigits(int n)
 {
 	int count;
@@ -20,6 +20,11 @@ int countdigits(int n)
 	if (n  == 0)
 		return (1);
 	count = 0;
+	if (n < 0)
+	{
+		n = -n;
+		count++;
+	}
 	while (n != 0)
 	{
 		n = n / 10;
@@ -28,32 +33,46 @@ int countdigits(int n)
 	return count;
 }
 
+void itoipart2(char *str, int numdi, long n)
+{
+	str[numdi] = '\0';
+	numdi--;
+	while (numdi >= 0)
+	{
+		str[numdi] = n % 10 + 48;
+		n =  n / 10;
+		numdi--;
+	}
+} 
+
 char *ft_itoa(int n)
 {
 	int numdi;
 	char *str;
+	long number;
 
-	numdi = countdigits(n);
-	if (n  == 0)
-		return (48);
-	if (n < 0)
-		str = (char *)malloc(sizeof(char) * numdi + 2);
+	number = n;
+	numdi = countdigits(number);
+	if (number  == 0)
+		return ("0");
+	if (number < 0)
+	{
+		str = (char *)malloc(sizeof(char) * numdi + 1);
+		number = -number;
+		str[0] = '-';
+	}
 	else
 		str = (char *)malloc(sizeof(char) * numdi + 1);
-	str[numdi] = '\0';
-	while (numdi != 0)
-	{
-		str[numdi - 1] = n % 10 + 48;
-		n =  n / 10;
-		numdi--;
-	}
-	printf("%d\n", countdigits(n));
+	itoipart2(str  + (n < 0), numdi - (n < 0), number);
+	printf("%d\n", countdigits(number));
 	return (str);
 }
 
 int main()
 {
-	int n = 1337; 
-	printf("string : %s\n", ft_itoa(n));
+	int n = 398279; 
+	char *number = ft_itoa(n);
+	printf("string : \'%s\'\n", number);
+	free(number);
 	return 0;
 }
