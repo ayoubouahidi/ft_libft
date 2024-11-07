@@ -63,6 +63,7 @@
 // }
 
 void ft_toupper(unsigned int i, char *c) {
+	(void)i;
 	if (*c >= 'a' && *c <= 'z')
 	{ 
 		*c = *c - 32; 
