@@ -62,17 +62,28 @@
 //   }
 // }
 
-void ft_toupper(unsigned int i, char *c) {
-	(void)i;
-	if (*c >= 'a' && *c <= 'z')
-	{ 
-		*c = *c - 32; 
-	}
-}
+// void ft_toupper(unsigned int i, char *c) {
+// 	(void)i;
+// 	if (*c >= 'a' && *c <= 'z')
+// 	{ 
+// 		*c = *c - 32; 
+// 	}
+// }
 
-int main()
-{
-	char s[] = "ayoub 19";
-	ft_striteri(s, ft_toupper);
-	printf("string : %s\n", s);
-}
+// int main()
+// {
+// 	char s[] = "ayoub 19";
+// 	ft_striteri(s, ft_toupper);
+// 	printf("string : %s\n", s);
+// }
+// int main()
+// {
+// 	int i;
+
+// 	i = 0;
+//     while (i <= 47)
+//     {
+// 		ft_printf("%d",ft_isascii(i));
+//         i++;
+//     }
+// }

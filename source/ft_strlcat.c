@@ -16,21 +16,19 @@
 size_t	ft_strlcat(char *dest,const char *src, size_t size)
 {
 	size_t	i;
-	char	*s;
 	size_t	lendest;
 	size_t	lensrc;
-	int	ret;
+	size_t	ret;
 
 	lendest = ft_strlen(dest);
 	lensrc = ft_strlen(src);
 	ret = lendest + lensrc;
-	s = (char *)src;
 	i = 0;
 	if (lendest >= size)
 		return (lensrc + size);
-	while(i != size)
+	while(src[i] != '\0' && (lendest + 1) < size)
 	{
-		dest[lendest] = s[i];
+		dest[lendest] = src[i];
 		i++;
 		lendest++;
 	}
@@ -38,14 +36,15 @@ size_t	ft_strlcat(char *dest,const char *src, size_t size)
 	return (ret);
 }
 
-int main()
-{
-    char src[10] = " ouahidi";
-    char dest[] = "ayoub";
-    int n = ft_strlcat(dest, src, 6);
-	// int d = strlcat(dest, src, 0);
+// int main()
+// {
+//     char src[] = "ayoub ouahidi";
+//     char dest[] = "a";
 
-    printf("string's function : %d\n", n);
-    // printf("string's function : %d\n", d);
+//     int n = ft_strlcat(dest, src, 6);
+// 	// int d = strlcat(dest, src, 6);
 
-}
+//     printf("string's function : %d\n", n);
+//     // printf("string's function : %d\n", d);
+
+// }

@@ -13,25 +13,27 @@
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *str, int c)
+char    *ft_strchr(const char *str, int c)
 {
-	int		i;
-	char	*s;
-
-	s = (char *)str;
-	i = 0;
-	while (s[i] != '\0')
-	{
-		if (s[i] == c)
-			return (&s[i]);
-		i++;
-	}
-	return (NULL);
+    int        i;
+    i = 0;
+    if(str[0] == '\0')
+		return ((char *)&str[i]);
+    while (str[i] != '\0')
+    {
+        if (str[i] == (char)c)
+            return ((char *)&str[i]);
+        i++;
+    }
+    if (c == '\0')
+        return ((char *)&str[i]);
+    return (NULL);
 }
-/*
-int main()
-{
-  char *str = "ayoubayou";
-  printf("string's function : %s\n", strchr(str, 'a'));
-  printf("ayoub's function : %s\n", strchr(str, 'a'));
-}*/
+
+
+// int main()
+// {
+// char *str = "ayaoub";
+//   printf("string's function : %s\n", strchr(str + 2, '\0'));
+//   printf("ayoub's function : %s\n", ft_strchr(str + 2, '\0'));
+// }

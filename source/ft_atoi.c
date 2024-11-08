@@ -16,7 +16,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-int	fornotminette(int result, int cmpt, int cmpmoins)
+ int	fornotminette( int result, int cmpt, int cmpmoins)
 {
 	if (cmpt > 1)
 		return (0);
@@ -36,7 +36,7 @@ int	ft_atoi(char *str)
 	result = 0;
 	cmpt = 0;
 	i = 0;
-	while (str[i] == 32 && str[i] != '\0')
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == 32 && str[i] != '\0'))
 		i++;
 	while (str[i] == '-' || str[i] == '+')
 	{
@@ -53,3 +53,10 @@ int	ft_atoi(char *str)
 	result = fornotminette(result, cmpt, cmpmoins);
 	return (result);
 }
+
+// int main()
+// {
+// 	char *str = "   2002";
+//   	printf("ayoub'sfunction output :   %d\n", ft_atoi(str));
+// 	printf("the atoi function output : %d\n", atoi(str));
+// }

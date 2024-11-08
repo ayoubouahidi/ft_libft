@@ -42,10 +42,10 @@ char	*ft_strnstr(const char *str, const char *find, size_t n)
 	return (&str1[i]);
 }
 // you should check norme and ur code 
-int main()
-{
-	char *str = "ouahidi ayoub ouahidi";
-	char *tofind = "ub";
-	char *result = ft_strnstr(str, tofind, 20);
-	printf("string's function : %s\n", result);
-}
+// int main()
+// {
+// 	char *str = "ouahidi ayoub ouahidi";
+// 	char *tofind = "ub";
+// 	char *result = ft_strnstr(str, tofind, 20);
+// 	printf("string's function : %s\n", result);
+// }

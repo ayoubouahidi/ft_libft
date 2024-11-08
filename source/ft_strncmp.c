@@ -12,6 +12,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
@@ -24,23 +25,28 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	i = 0;
 	if (i == n)
 		return (0);
-	while ((str1[i] != '\0' && str2[i] != '\0' ) && i < n)
+	while ((i < ft_strlen(str1) && i < ft_strlen(str2) ) && i < n)
 	{
-		if (str1[i] != str2[i])
+		if ((unsigned char)str1[i] != (unsigned char)str2[i])
 		{
-			return (str1[i] - str2[i]);
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 		}
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	if (i == n)
+		return (0);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
-/*
-int main()
-{
-    char str1[] = "Ayoub";
-    char str2[] = "ayoub";
 
-    int n = ft_strncmp(str1,str2, 3);
-    printf("ayoub's function : %d", n);
-}
-*/
+// int main()
+// {
+//     char str1[] = "Ayoub";
+//     char str2[] = "Ayoub";
+
+//     int a = ft_strncmp("test\200", "test\0", 6);
+// 	int s = strncmp("test\200", "test\0", 6);
+
+//     printf("ayoub's function : %d\n", a);
+// 	printf("string's function : %d\n", s);
+// }
+

@@ -22,24 +22,26 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	str1 = (char *)s1;
 	str2 = (char *)s2;
 	i = 0;
-	while ((str1[i] != '\0' && str2[i] != '\0') && i < n)
+	while (((unsigned char)str1[i] != '\0' && (unsigned char)str2[i] != '\0') && i < n)
 	{
 		if (str1[i] != str2[i])
-			return (str1[i] - str2[i]);
+			return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 		i++;
 	}
-	return (str1[i] - str2[i]);
+	if (i == n)
+		return (0);
+	return ((unsigned char)str1[i] - (unsigned char)str2[i]);
 }
-/*
-int main()
-{
-	char str1[20] = "zyoub";
-	char str2[20] = "ayoub";
 
-	int n = memcmp(str1, str2, 1);
-	printf("string's function : %d\n", n);
+// int main()
+// {
+// 	char str1[20] = "zyoub";
+// 	char str2[20] = "ayoub";
 
-	int a = memcmp(str1, str2, 1);
-	printf("ayoub's function : %d\n", a);
-}
-*/
+// 	int n = memcmp("t\200", "t\0", 2);
+// 	printf("string's function : %d\n", n);
+
+// 	int a = ft_memcmp("t\200", "t\0", 2);
+// 	printf("ayoub's function : %d\n", a);
+// }
+

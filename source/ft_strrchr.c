@@ -23,20 +23,22 @@ char	*ft_strrchr(const char *str, int c)
 	s = (char *)str;
 	lenstr = ft_strlen(str);
 	i = lenstr;
-	while (s[i] != '\0')
+	while (i >= 0)
 	{
 		if (s[i] == c)
-			return (&s[i]);
+			return ((char *)&str[i]);
 		i--;
 	}
+	if (c == '\0')
+        return ((char *)&str[i]);
 	return (NULL);
 }
-/*
- int main()
- {
-   char str[20] = "esayoubaes";
 
-   printf("string's function : %s\n", strrchr(str, 't'));
-   printf("ayoub's function : %s\n", strrchr(str, 't'));
- }
- */
+//  int main()
+//  {
+//    char str[] = "bonjour";
+
+//    printf("string's function : %s\n", ft_strrchr(str, 'b'));
+//    printf("ayoub's function : %s\n", strrchr(str, 'b'));
+//  }
+

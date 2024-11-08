@@ -37,13 +37,13 @@ char *ft_strdup(const char *s)
 	return newstr;
 }
 
-int main()
-{
-  char *str = "ayoub ouahidi";
+// int main()
+// {
+//   char *str = "ayoub ouahidi";
 
-  char *newstr = strdup(str);
-  printf("string's function : %s\n", newstr);
+//   char *newstr = strdup(str);
+//   printf("string's function : %s\n", newstr);
 
-  char *ayoubstr = ft_strdup(str);
-  printf("ayoub's function : %s\n", ayoubstr);
-}
+//   char *ayoubstr = ft_strdup(str);
+//   printf("ayoub's function : %s\n", ayoubstr);
+// }

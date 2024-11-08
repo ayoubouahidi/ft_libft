@@ -68,11 +68,11 @@ char *ft_itoa(int n)
 	return (str);
 }
 
-int main()
-{
-	int n = 398279; 
-	char *number = ft_itoa(n);
-	printf("string : \'%s\'\n", number);
-	free(number);
-	return 0;
-}
+// int main()
+// {
+// 	int n = 398279; 
+// 	char *number = ft_itoa(n);
+// 	printf("string : \'%s\'\n", number);
+// 	free(number);
+// 	return 0;
+// }

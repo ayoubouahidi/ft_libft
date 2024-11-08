@@ -35,18 +35,18 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (str);
 }
 
-char ft_toupper(unsigned int i, char c) {
-	(void)i;
-	if (c >= 'a' && c <= 'z')
-	{ 
-		return c - 32; 
-	}
-	return c;
-}
-int main(void)
-{
-	char *str = "ayoub";
-	char *r = ft_strmapi(str, ft_toupper);
+// char ft_toupper(unsigned int i, char c) {
+// 	(void)i;
+// 	if (c >= 'a' && c <= 'z')
+// 	{ 
+// 		return c - 32; 
+// 	}
+// 	return c;
+// }
+// int main(void)
+// {
+// 	char *str = "ayoub";
+// 	char *r = ft_strmapi(str, ft_toupper);
 
-	printf("%s\n", r);
-}
+// 	printf("%s\n", r);
+// }
