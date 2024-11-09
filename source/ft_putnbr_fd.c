@@ -36,9 +36,9 @@ void ft_putnbr_fd(int n, int fd)
 	}
 }
 
-int main()
-{
-	int n = -2147483647;
-	ft_putnbr_fd(n,1);
-	printf("\n");
-}
+// int main()
+// {
+// 	int n = -2147483647;
+// 	ft_putnbr_fd(n,1);
+// 	printf("\n");
+// }

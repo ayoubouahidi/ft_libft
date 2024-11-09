@@ -58,12 +58,21 @@ char *mallocword(char *s, char c)
 char 	**ft_split(char const *s, char c)
 {
 	size_t	i;
-	size_t	j;
+	int	j;
 	int	words;
 	char	**str;
 
 	words = countwords(s, c);
-	str = (char **)malloc(sizeof(char *) * words + 1);
+	if (s[0] == '\0')
+	{
+		str = (char **)malloc(sizeof(char *) * 1);
+		str[0] = NULL;
+		return (str);
+	}
+	str = (char **)malloc(sizeof(char *) * (words + 1));
+	if(str == NULL)
+		return NULL;
+	
 	i = 0;
 	j = 0;
 	while (s[i] != '\0')
@@ -78,21 +87,23 @@ char 	**ft_split(char const *s, char c)
 		while(s[i] != '\0' && s[i] != c)
 			i++;
 	}
-	str[i] = NULL;
+	str[j] = NULL;
 	return str;
 }
 
 // int main()
 // {
-// 	char *s = "ayoub+ouahidi+";
+// 	char *s = "ayoub+ayoub";
 // 	size_t i;
 // 	i = 0;
-// 	char **str = ft_split(s, '+');
+// 	char **str = ft_split("          ", ' ');
 // 	while (str[i] != NULL)
 // 	{
 // 		printf("num of words is : %s\n", str[i]);
 // 		// free(str[i]);
 // 		i++;
 // 	}
+// 	if (str[0] == NULL)
+// 		printf("test done");
 // 	// free(str);
 // }

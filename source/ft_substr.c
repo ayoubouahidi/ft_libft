@@ -22,7 +22,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char *str;
 
 	str = (char *)s;
-	newstr = malloc(len * sizeof(char));
+	newstr = malloc(len * sizeof(char) + 1);
 	if (newstr == NULL)
 		return NULL;
 	i = 0;
@@ -35,5 +35,19 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		}
 		i++;
 	}
+	newstr[len] = '\0'; 
 	return (newstr);
+}
+
+int  main()
+{
+	int i = 0;
+	char *str = "lorem ipsum dolor sit amet";
+	char *newstr = ft_substr(str, 0, 10);
+	while (i < 20)
+	{
+		printf("%d|| %c\n", newstr[i], newstr[i]);
+		i++;
+	}
+	printf("the string's is : %s\n", newstr);
 }

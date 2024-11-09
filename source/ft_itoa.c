@@ -52,9 +52,7 @@ char *ft_itoa(int n)
 	long number;
 
 	number = n;
-	numdi = countdigits(number);
-	if (number  == 0)
-		return ("0");
+	numdi = countdigits(number);	
 	if (number < 0)
 	{
 		str = (char *)malloc(sizeof(char) * numdi + 1);
@@ -64,15 +62,14 @@ char *ft_itoa(int n)
 	else
 		str = (char *)malloc(sizeof(char) * numdi + 1);
 	itoipart2(str  + (n < 0), numdi - (n < 0), number);
-	printf("%d\n", countdigits(number));
 	return (str);
 }
 
 // int main()
 // {
-// 	int n = 398279; 
+// 	int n = 0; 
 // 	char *number = ft_itoa(n);
 // 	printf("string : \'%s\'\n", number);
-// 	free(number);
+// 	// free(number);
 // 	return 0;
 // }

@@ -71,6 +71,8 @@ char *ft_strtrim(char const *s1, char const *set)
 		i++;
 		cmpt++;
 	}
+	if (ft_strlen(s1) == cmpt)
+		return ("");
 	j = ft_strlen(s1) - 1;
 	while (s1[j] != '\0' && ft_strchr(set, s1[j]))
 	{
@@ -83,3 +85,11 @@ char *ft_strtrim(char const *s1, char const *set)
 	ft_strlcpy(newstr, s1 + i, (ft_strlen(s1) - cmpt + 1));
 	return (newstr);
 }
+
+// int main()
+// {
+// 	char *str = "!+payo ub+ouahidi+++!";
+// 	char *set = "!+";
+// 	char *newstr = ft_strtrim(str, set);
+// 	printf("the size is : %s\n", newstr);
+// }
