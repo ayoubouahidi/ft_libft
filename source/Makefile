@@ -11,7 +11,7 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar -crs $(NAME) $(OBJS)
+	ar -crs $(NAME) $?
 #why we start by this part !?
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@ 
