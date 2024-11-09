@@ -91,19 +91,19 @@ char 	**ft_split(char const *s, char c)
 	return str;
 }
 
-// int main()
-// {
-// 	char *s = "ayoub+ayoub";
-// 	size_t i;
-// 	i = 0;
-// 	char **str = ft_split("          ", ' ');
-// 	while (str[i] != NULL)
-// 	{
-// 		printf("num of words is : %s\n", str[i]);
-// 		// free(str[i]);
-// 		i++;
-// 	}
-// 	if (str[0] == NULL)
-// 		printf("test done");
-// 	// free(str);
-// }
+int main()
+{
+	char *s = "ayoub+ayoub";
+	size_t i;
+	i = 0;
+	char **str = ft_split("          ", ' ');
+	while (str[i] != NULL)
+	{
+		printf("num of words is : %s\n", str[i]);
+		// free(str[i]);
+		i++;
+	}
+	if (str[0] == NULL)
+		printf("test done");
+	// free(str);
+}
