@@ -12,7 +12,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -crs $(NAME) $?
-#why we start by this part !?
+#why we start by this part !? and what's the meaning of @?
 %.o: %.c libft.h
 	$(CC) $(CFLAGS) -c $< -o $@ 
 #why we use $<:the first dependacy and not $^ and more explination to this part and why we used libft.h
